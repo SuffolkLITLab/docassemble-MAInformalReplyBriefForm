@@ -172,7 +172,6 @@ id: Information
 question: |
   Information
 subquestion: |
- 
   - The purpose of a reply brief is to respond to arguments raised by the appellee in their brief, not to repeat arguments already made in your original brief.
 
   - You can use this form to file an informal reply brief if you are appealing a court's decision to the Massachusetts Appeals Court.
@@ -213,7 +212,9 @@ fields:
 id: filing_institution
 question: |
   Are you currently in a federal or state prison?
-yesno: filing_institution
+fields:
+  - In a federal or state prison: filing_institution
+    datatype: yesnoradio
 help: |
       If you are in a federal or state prison, then you will mail the brief. There is a form that will automatically attach to your document. 
 ---
@@ -222,14 +223,18 @@ question: |
   Are you filing this brief in the **mail**?
   
   - **Note:** You can only file this brief one time. If you choose to file by mail, do not file electronically. If you choose to file electronically, do not file by mail.
-yesno: filing_mail
+fields:
+  - Filing by mail: filing_mail
+    datatype: yesnoradio
 ---
 id: filing_electronic
 question: |
   Are you filing this brief **electronically**?
   
   - **Note:** You can only file this brief one time. If you choose to file by mail, do not file electronically. If you choose to file electronically, do not file by mail.
-yesno: filing_electronic
+fields:
+  - Filing electronically: filing_electronic
+    datatype: yesnoradio
 help: |
   We will give you instructions on how to do this at the end of the interview. If you choose to select "No" then you will have to mail the brief. We will automatically fill out a form for you that will attach to your brief.
 ---
@@ -320,6 +325,7 @@ review:
       **Appeal reply arguments[i].fact reference**:
       ${ appeal_reply_arguments[i].fact_reference }
 ---
+id: edit users
 continue button field: users.revisit
 question: |
   Edit users
@@ -356,6 +362,7 @@ edit:
 confirm: True
 
 ---
+id: edit other parties
 continue button field: other_parties.revisit
 question: |
   Edit other_parties
